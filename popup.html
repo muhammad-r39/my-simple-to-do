@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Todo + Note</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="todo" role="tab" aria-selected="true">
+            Todo
+          </button>
+          <button class="tab" data-tab="note" role="tab" aria-selected="false">
+            Note
+          </button>
+        </div>
+        <div class="header-actions">
+          <button id="addBtn" class="add-btn" type="button" aria-label="Add">
+            +
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section id="todoPanel" class="panel active" role="tabpanel">
+          <div id="todoForm" class="form hidden"></div>
+          <ul id="todoList" class="list"></ul>
+
+          <div id="upcomingSection" class="section hidden">
+            <div class="section-title">Upcoming</div>
+            <ul id="upcomingList" class="list muted"></ul>
+          </div>
+
+          <div id="completedSection" class="section hidden">
+            <div class="section-title">Completed</div>
+            <ul id="completedList" class="list muted"></ul>
+          </div>
+        </section>
+
+        <section id="notePanel" class="panel" role="tabpanel">
+          <div id="noteForm" class="form hidden"></div>
+          <ul id="noteList" class="list"></ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-actions">
+          <button id="autoSortBtn" class="footer-btn" type="button">Auto Sort</button>
+          <button id="viewCompletedBtn" class="footer-btn" type="button">View Completed</button>
+        </div>
+        <div class="footer-toggles">
+          <label class="toggle">
+            <input id="floatingToggle" type="checkbox" />
+            <span class="toggle-text">Float</span>
+            <button class="tooltip-btn" type="button" aria-label="Float info">i</button>
+            <span class="tooltip-bubble">Show the floating widget on pages.</span>
+          </label>
+          <label class="toggle">
+            <input id="floatingCollapsedToggle" type="checkbox" />
+            <span class="toggle-text">Collapse</span>
+            <button class="tooltip-btn" type="button" aria-label="Collapse info">i</button>
+            <span class="tooltip-bubble">Start the widget collapsed as an icon button.</span>
+          </label>
+        </div>
+      </footer>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
